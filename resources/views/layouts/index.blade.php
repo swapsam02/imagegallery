@@ -8,10 +8,14 @@
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <link rel="shortcut icon" href="{{ asset('dist/assets/images/favicon.ico') }}">
+        @if(Route::currentRouteName() == 'sub-catogery')
         <link href="{{ asset('dist/assets/libs/datatables/dataTables.bootstrap4.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('dist/assets/libs/datatables/responsive.bootstrap4.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('dist/assets/libs/datatables/buttons.bootstrap4.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('dist/assets/libs/datatables/select.bootstrap4.css') }}" rel="stylesheet" type="text/css" />
+        @endif
         @if(Route::currentRouteName() == 'view-gallery')
-            <link href="{{ asset('dist/assets/libs/magnific-popup/magnific-popup.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('dist/assets/libs/magnific-popup/magnific-popup.css') }}" rel="stylesheet" type="text/css" />
         @endif
         <link href="{{ asset('dist/assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('dist/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
@@ -31,13 +35,16 @@
         <script src="{{ asset('dist/assets/libs/jquery-knob/jquery.knob.min.js') }}"></script>
         <script src="{{ asset('dist/assets/libs/peity/jquery.peity.min.js') }}"></script>
         <script src="{{ asset('dist/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
+         @if(Route::currentRouteName() == 'sub-catogery')
         <script src="{{ asset('dist/assets/libs/datatables/jquery.dataTables.min.js') }}"></script>
         <script src="{{ asset('dist/assets/libs/datatables/dataTables.bootstrap4.js') }}"></script>
         <script src="{{ asset('dist/assets/libs/datatables/dataTables.responsive.min.js') }}"></script>
         <script src="{{ asset('dist/assets/libs/datatables/responsive.bootstrap4.min.js') }}"></script>
+        <script src="{{ asset('dist/assets/js/pages/datatables.init.js') }}"></script>
+        @endif
         @if(Route::currentRouteName() == 'view-gallery')
-            <script src="{{ asset('dist/assets/libs/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
-            <script src="{{ asset('dist/assets/js/pages/lightbox.init.js') }}"></script>
+        <script src="{{ asset('dist/assets/libs/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+        <script src="{{ asset('dist/assets/js/pages/lightbox.init.js') }}"></script>
         @endif
         <script src="{{ asset('dist/assets/js/pages/dashboard-2.init.js') }}"></script>
         <script src="{{ asset('dist/assets/js/app.min.js') }}"></script> 

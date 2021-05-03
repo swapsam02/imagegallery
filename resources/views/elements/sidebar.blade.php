@@ -19,13 +19,13 @@
                 </li>
                 @php
                     $activeSystemSetClass = '';
-                    $SystemSetArr = ['view-gallery'];
+                    $SystemSetArr = ['view-gallery','sub-catogery'];
                     if(in_array(Route::currentRouteName(), $SystemSetArr)){
                         $activeSystemSetClass = 'active';
                     }
                 @endphp
                 <li>
-                    <a href="{{ route('view-gallery') }}">
+                    <a href="{{ route('view-gallery') }}" class="{{ $activeSystemSetClass }}">
                         <i class="la la-file-picture-o"></i>
                         <span> Gallery </span>
                     </a>

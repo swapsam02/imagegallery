@@ -23,7 +23,6 @@ class Catogery extends Model
     {
         $saveResult = false;
         DB::beginTransaction();
-
         $data = $request->only('category_name','slug');
         $data['slug'] = str_slug($request->category_name);
         $data['img_url'] = $this->imageupload($request->file('img_url'), $data['slug']);
