@@ -54,8 +54,7 @@
                                     <i class="mdi mdi-dots-horizontal"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="javascript:void(0);" class="dropdown-item">Edit</a>
-                                    <a href="javascript:void(0);" class="dropdown-item">Delete</a>
+                                    <a href="{{ route('delete-catogery', ['cid' => $catogery->id]) }}" class="dropdown-item">Delete</a>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +64,7 @@
         </div>
     </div>
 </div>
- <!-- Popup with Form -->
+ <!-- add catogery Popup with Form -->
 <form id="test-form" class="mfp-hide white-popup-block" method="post" action="{{ route('view-gallery') }}" enctype="multipart/form-data">
     @csrf
     <h3 class="font-18">Add Catogery</h3><br>

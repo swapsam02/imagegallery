@@ -19,10 +19,16 @@ class Catogery extends Model
         return Catogery::where('is_deleted', 0)->get();
     }
 
+    public function getCatogery($catogerySlug)
+    {
+        return Catogery::where('slug', $catogerySlug)->first();
+    }
+
     public function saveCatogery(Request $request)
     {
         $saveResult = false;
         DB::beginTransaction();
+
         $data = $request->only('category_name','slug');
         $data['slug'] = str_slug($request->category_name);
         $data['img_url'] = $this->imageupload($request->file('img_url'), $data['slug']);

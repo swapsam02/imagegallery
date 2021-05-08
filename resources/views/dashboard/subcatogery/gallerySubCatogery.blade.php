@@ -10,14 +10,14 @@
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
                             <li class="breadcrumb-item"><a href="{{ route('view-gallery') }}">Gallery</a></li>
-                            <li class="breadcrumb-item active">{{ ucfirst($catogery) }} </li>
+                            <li class="breadcrumb-item active">{{ ucfirst($catogeryList->slug) }} </li>
                         </ol>
                     </div>
-                    <h4 class="page-title">{{ ucfirst($catogery) }}</h4>
+                    <h4 class="page-title">{{ ucfirst($catogeryList->slug) }}</h4>
                 </div>
             </div>
         </div> 
-
+        
         <div class="row mb-3">
             <div class="col-12 text-right">
                 <div class="card-box">

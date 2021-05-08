@@ -7,8 +7,10 @@ use Illuminate\Support\Facades\Redirect;
 use App\Services\PayUservice\Exception;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Storage; 
 use App\Catogery;
 use Session;
+use File;
 
 class GalleryController extends Controller
 {
@@ -31,7 +33,7 @@ class GalleryController extends Controller
                     Session::flash('alert-class','success');
                     return redirect()->route('view-gallery');
                 }else{
-                    Session::flash('msg','Unable to add student.');
+                    Session::flash('msg','Unable to add catogery.');
                     Session::flash('alert-class','danger');
                     return redirect()->route('view-gallery');
                 }
@@ -43,9 +45,14 @@ class GalleryController extends Controller
         }
     }
 
-    public function gallerySubCatogery($catogery)
+    public function deleteCatogery($cid)
     {
-        return view('dashboard.gallery.gallerySubCatogery', compact('catogery'));
+        $catogery = Catogery::findOrFail($cid);
+        $folder_path = $catogery->slug;
+        $path = str_replace('\\','/',public_path('images/'.$folder_path));
+        $data = File::deleteDirectory($path);
+        $catogery->delete();
+        return redirect()->route('view-gallery');
     }
 
     protected function getValidateCatogery($data)

@@ -24,5 +24,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // gallery routes
 Route::match(['get','post'],'view-gallery', 'GalleryController@galleryCatogery')->name('view-gallery');
-Route::get('sub-catogery/{cat}', 'GalleryController@gallerySubCatogery')->name('sub-catogery');
+Route::get('delete-catogery/{cid}', 'GalleryController@deleteCatogery')->name('delete-catogery');
+
+// subcatogery routes
+Route::get('sub-catogery/{cat}', 'SubCatogeryController@gallerySubCatogery')->name('sub-catogery');
 
